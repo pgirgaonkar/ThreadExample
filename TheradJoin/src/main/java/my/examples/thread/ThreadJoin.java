@@ -18,11 +18,20 @@ public class ThreadJoin {
             list.add(s);
             s.start();
         }
+
         for(SampleThread st:list){
             try{
                 st.join();
             } catch (Exception ex){ex.printStackTrace();}
         }
+
+        /*
+        // can explain interrupt better here.
+        for(SampleThread st:list){
+            try{
+                st.interrupt();
+            } catch (Exception ex){ex.printStackTrace();}
+        }*/
         System.out.println(names);
     }
 }

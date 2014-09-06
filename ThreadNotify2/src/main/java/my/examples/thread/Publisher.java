@@ -12,7 +12,7 @@ public class Publisher extends Thread {
         try {
             while (true) {
                 putMessage();
-                //sleep(5000);
+                //sleep(500);
             }
         } catch (InterruptedException e) {
         }
@@ -34,7 +34,7 @@ public class Publisher extends Thread {
         while (messages.size() == 0) {
             wait();//By executing wait() from a synchronized block, a thread gives up its hold on the lock and goes to sleep.
         }
-        String message = (String) messages.firstElement();
+        String message = (String) messages.firstElement();// + "Size = " + messages.size();
         messages.removeElement(message);
         return message;
     }
